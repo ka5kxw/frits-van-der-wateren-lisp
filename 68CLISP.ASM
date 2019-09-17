@@ -1827,46 +1827,46 @@ PUTIN 	STAA NUM1 				CREATE A NUMERIC ATOM
 		STAB 1,X
 		LDX ARG1
 		RTS
-SN.MS 	FCC /SYNTAX ERRO/			Possible workaround because
-	FCB 'R | $80				original code used fcs directive
+SN.MS 	FCC /SYNTAX ERRO/			Directive workaround because
+	FCB 'R|$80				original code used fcs directive
 						which set sign bit on last character
 						not supported in motorola assembler.
 NA.MS 	FCC /NON ATOMIC ARG:/
-	FCB $20 | $80				ascii space ORd sign bit high
+	FCB $20|$80				ascii space ORd sign bit high
 TMA.MS 	FCC /TOO MANY ARGS/
-	FCB $20 | $80
+	FCB $20|$80
 FN.MS 	FCC /ILL. FUNCTION:/
-	FCB $20 | $80
+	FCB $20|$80
 AA.MS 	FCC /ATOMIC ARG:/
-	FCB $20 | $80
+	FCB $20|$80
 IN.MS 	FCC /ILLEGAL NUMBE/
-	FCB 'R | $80
+	FCB 'R|$80
 GO.MS 	FCC /ILLEGAL GO:/
-	FCB $20 | $80
+	FCB $20|$80
 NN.MS 	FCC /NON NUMERIC ARG:/
-	FCB $20 | $80
+	FCB $20|$80
 OV.MS 	FCC /OVERFLO/
-	FCB 'W | $80
+	FCB 'W|$80
 TLA.MS 	FCC /TOO LITTLE ARGS/
-	FCB $20 | $80
+	FCB $20|$80
 FOR.MS 	FCC /FOR:/
-	FCB $20 | $80
+	FCB $20|$80
 FL.MS 	FCC /MEMORY FUL/
-	FCB 'L | $80
+	FCB 'L|$80
 SO.MS 	FCC /STACK OVERFLO/
-	FCB 'W | $80
+	FCB 'W|$80
 ID.MS 	FCC /ILLEGAL DEVIC/
-	FCB 'E | $80
+	FCB 'E|$80
 HED 	FCC /  LISP 1.5  V3A/
-	FCB $20 | $80
+	FCB $20|$80
 *
 * THE OBJECT LIST (OBLIST)
 *
 LOC		EQU	*+3
-		ORG LOC/4*4						EVEN WORD ADDRESSING
-NAMNIL	FCC /NI/						PRINT NAME 0F ATOM 'NIL'
+		ORG LOC/4*4				EVEN WORD ADDRESSING
+NAMNIL	FCC /NI/					PRINT NAME 0F ATOM 'NIL'
 		FDB *+2
-		FCB 'L,$80
+		FCB 'L,$80	
 		FDB NIL
 PRPNIL	FDB APVAL,*+4					PROPERTY OF ATOM 'NIL'
 		FDB NIL,*+4
